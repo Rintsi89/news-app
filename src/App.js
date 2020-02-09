@@ -7,7 +7,9 @@ import { Container } from 'semantic-ui-react'
 const App = (props) => {
 
   useEffect(() => {
-    props.initializeSources()
+    if (!props.sources) {
+      props.initializeSources()
+    } 
   }, [])
 
   return (
