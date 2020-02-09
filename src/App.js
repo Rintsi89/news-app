@@ -23,4 +23,10 @@ const mapDispatchToProps = {
   initializeSources
 }
 
-export default connect(null, mapDispatchToProps)(App)
+const mapStateToProps = (state) => {
+  return {
+    sources: state.sources
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
