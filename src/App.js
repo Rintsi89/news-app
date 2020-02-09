@@ -7,9 +7,14 @@ import { Container } from 'semantic-ui-react'
 const App = (props) => {
 
   useEffect(() => {
-    if (!props.sources) {
-      props.initializeSources()
-    } 
+
+    const getData = async () => {
+      if (!props.removals) {
+        await props.initializeSources()
+      }
+     
+    }
+   getData()
   }, [])
 
   return (
