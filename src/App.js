@@ -5,16 +5,13 @@ import { initializeSources } from './reducers/sourceReducer'
 import { Container } from 'semantic-ui-react'
 
 const App = (props) => {
-
+  
   useEffect(() => {
 
-    const getData = async () => {
-      if (!props.removals) {
-        await props.initializeSources()
+      if (props.sources.length === 0) {
+        props.initializeSources()
       }
-     
-    }
-   getData()
+
   }, [])
 
   return (
